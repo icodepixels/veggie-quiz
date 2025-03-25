@@ -3,8 +3,9 @@ version: '3.8'
 services:
   api:
     build:
-      context: ./api
+      context: .
       dockerfile: Dockerfile
+      target: api
     ports:
       - "9000:9000"
     environment:
@@ -16,8 +17,9 @@ services:
 
   client:
     build:
-      context: ./client
+      context: .
       dockerfile: Dockerfile
+      target: client
     ports:
       - "3000:3000"
     environment:
