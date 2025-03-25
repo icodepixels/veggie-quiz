@@ -20,11 +20,11 @@ services:
       context: ./client
       dockerfile: Dockerfile
       args:
-        - API_URL=http://localhost:9000  # For local development
+        - API_URL=https://veggie-quiz.onrender.com  # For local development
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:9000
+      - NEXT_PUBLIC_API_URL=https://veggie-quiz.onrender.com
     volumes:
       - ./client:/app
       - /app/node_modules
