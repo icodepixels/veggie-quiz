@@ -1,0 +1,29 @@
+# blinker==1.9.0
+# click==8.1.8
+# Flask==3.1.0
+# flask-cors==5.0.1
+# importlib_metadata==8.6.1
+# itsdangerous==2.2.0
+# Jinja2==3.1.6
+# MarkupSafe==3.0.2
+# SQLAlchemy==2.0.39
+# tabulate==0.9.0
+# typing_extensions==4.12.2
+# Werkzeug==2.0.1
+# zipp==3.21.0
+
+
+Flask==2.0.1
+Flask-CORS==3.0.10
+SQLAlchemy==2.0.39
+Werkzeug==2.0.1
+
+fastapi>=0.68.0
+uvicorn>=0.15.0
+databases[sqlite]>=0.5.3
+sqlalchemy>=1.4.23
+pydantic>=1.8.2
+pydantic-settings>=2.0.0
+python-dotenv>=0.19.0
+aiosqlite>=0.17.0
+# Add any other dependencies your API needs
