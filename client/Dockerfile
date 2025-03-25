@@ -12,7 +12,8 @@ RUN npm install
 COPY . .
 
 # Set environment variable for the API URL
-ENV NEXT_PUBLIC_API_URL=http://api:9000
+ARG API_URL
+ENV NEXT_PUBLIC_API_URL=${API_URL}
 
 # Build the application
 RUN npm run build

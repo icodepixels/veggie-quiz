@@ -17,13 +17,14 @@ services:
 
   client:
     build:
-      context: .
+      context: ./client
       dockerfile: Dockerfile
-      target: client
+      args:
+        - API_URL=http://localhost:9000  # For local development
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://api:9000
+      - NEXT_PUBLIC_API_URL=http://localhost:9000
     volumes:
       - ./client:/app
       - /app/node_modules
