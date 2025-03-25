@@ -22,7 +22,10 @@ export default function SignUpModal({ isOpen, onClose, onSignUpSuccess }: SignUp
     const event = new Event('emailStatusChanged');
     window.dispatchEvent(event);
   };
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:9000';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+  (process.env.NODE_ENV === 'production'
+    ? 'https://veggie-quiz.onrender.com'
+    : 'http://localhost:9000');
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);

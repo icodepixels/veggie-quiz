@@ -1,7 +1,10 @@
 import CategoryClient from './CategoryClient';
 
 async function getQuizzesByCategory(category: string) {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:9000';
+  const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+  (process.env.NODE_ENV === 'production'
+    ? 'https://veggie-quiz.onrender.com'
+    : 'http://localhost:9000');
   const res = await fetch(
     `${API_URL}/api/quizzes?category=${category}`,
     { cache: 'no-store' }

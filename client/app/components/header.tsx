@@ -1,7 +1,10 @@
 import HeaderClient from './HeaderClient';
 import { Category } from '../types';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:9000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+  (process.env.NODE_ENV === 'production'
+    ? 'https://veggie-quiz.onrender.com'
+    : 'http://localhost:9000');
 async function getCategories(): Promise<string[]> {
   const response = await fetch(`${API_URL}/api/categories`, {
     cache: 'no-store'

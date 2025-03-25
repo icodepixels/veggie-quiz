@@ -1,6 +1,9 @@
 import ResultsClient from './ResultsClient';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:9000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL ||
+  (process.env.NODE_ENV === 'production'
+    ? 'https://veggie-quiz.onrender.com'
+    : 'http://localhost:9000');
 async function getQuizData(id: string) {
   const response = await fetch(`${API_URL}/api/quizzes/${id}/questions`, {
     cache: 'no-store',
